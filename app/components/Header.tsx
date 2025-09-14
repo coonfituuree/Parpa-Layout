@@ -19,7 +19,6 @@ const Header = () => {
           height={40}
         />
       </div>
-      {/* МЕНЮ */}
       <nav className="hidden xs:flex items-center gap-4 sm:gap-8 lg:gap-10">
         <div className="cursor-pointer">Menu</div>
         <div className="cursor-pointer">Catalog</div>
