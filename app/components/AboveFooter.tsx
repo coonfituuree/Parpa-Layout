@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./AboveFooter.module.css";
+import styles from "../styles/AboveFooter.module.css";
 
 const AboveFooter = () => {
   return (

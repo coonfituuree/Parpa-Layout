@@ -3,7 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import AboveFooter from "./components/AboveFooter/AboveFooter";
+import AboveFooter from "./components/AboveFooter";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",

@@ -1,11 +1,25 @@
-import styles from './ProductCard.module.css';
-import { ProductCardProps } from './ProductCard.types';
-import Image from 'next/image';
+import Link from "next/link";
+import styles from "@/app/styles/ProductCard.module.css";
+import { ProductCardProps } from "./ProductCard.types";
+import Image from "next/image";
 
-export default function ProductCard({ image, title, subtitle, price }: ProductCardProps) {
+
+export default function ProductCard({
+  slug,
+  image,
+  title,
+  subtitle,
+  price,
+}: ProductCardProps) {
   return (
-    <div className={styles.card}>
-      <Image className={styles.image} src={image} alt={title} width={281} height={281}/>
+    <Link href={`/products/${slug}`} className={styles.card}>
+      <Image
+        className={styles.image}
+        src={image}
+        alt={title}
+        width={281}
+        height={281}
+      />
       <div className={styles.body}>
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.subtitle}>{subtitle}</div>
@@ -16,6 +30,6 @@ export default function ProductCard({ image, title, subtitle, price }: ProductCa
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
