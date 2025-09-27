@@ -12,41 +12,43 @@ const Footer = () => {
             height={40}
             className="mb-4"
           />
-          <h3 className="text-sm font-semibold mb-2">Контакты</h3>
-          <p className="text-lg font-bold">+7 495 122 22 46</p>
-          <p className="text-sm text-gray-400">9:00 до 22:00 по Москве</p>
+          <h3 className="text-sm font-semibold mb-2">Contacts</h3>
+          <p className="text-lg font-bold">+7 706 706 65 00</p>
+          <p className="text-sm text-gray-400">
+            9:00 a.m. to 10:00 p.m. Astana time
+          </p>
         </div>
         <div>
-          <h3 className="text-sm font-semibold mb-4">Каталог</h3>
+          <h3 className="text-sm font-semibold mb-4">Catalog</h3>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li>Постельное белье</li>
-            <li>Покрывала</li>
-            <li>Декоративные наволочки</li>
-            <li>Средства по уходу</li>
-            <li>Текстиль для ванной</li>
+            <li>Bed linen</li>
+            <li>Bedspreads</li>
+            <li>Decorative pillowcases</li>
+            <li>Care products</li>
+            <li>Bathroom textiles</li>
           </ul>
         </div>
         <div>
-          <h3 className="text-sm font-semibold mb-4">О Parpa</h3>
+          <h3 className="text-sm font-semibold mb-4">About Parpa</h3>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li>О компании</li>
-            <li>Процесс производства</li>
-            <li>Материалы</li>
-            <li>Инструкции по уходу</li>
+            <li>About the company</li>
+            <li>Production process</li>
+            <li>Materials</li>
+            <li>Care instructions</li>
           </ul>
         </div>
         <div>
-          <h3 className="text-sm font-semibold mb-4">Еще</h3>
+          <h3 className="text-sm font-semibold mb-4">More</h3>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li>Заказать образцы</li>
-            <li>Оплата и доставка</li>
-            <li>Примерка</li>
-            <li>Обмен и возврат</li>
+            <li>Order samples</li>
+            <li>Payment and delivery</li>
+            <li>Fitting</li>
+            <li>Exchanges and returns</li>
           </ul>
         </div>
       </div>
       <div className="mt-12 text-center text-xs text-gray-500">
-        © Parpa 2019. Все права защищены
+        © Parpa 2019. All rights reserved
       </div>
     </footer>
   );

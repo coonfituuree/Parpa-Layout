@@ -4,7 +4,7 @@ export const products: Product[] = [
   {
     slug: 'monochrome',
     title: 'Monochrome',
-    priceFrom: 31500,
+    priceFrom: 749.99,
     inStock: true,
     images: ['/bed12.jpg','/bed12.jpg','/bed12.jpg'],
     description: 'Комплект постельного белья Bicolor из длинноволокнистого хлопка...',

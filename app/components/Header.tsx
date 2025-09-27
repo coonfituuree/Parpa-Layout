@@ -17,19 +17,39 @@ const Header = () => {
         </div>
       </Link>
 
-      <nav className="hidden xs:flex items-center gap-4 sm:gap-8 lg:gap-10">
+      <nav className="hidden ml-8 xs:flex items-center gap-4 sm:gap-8 lg:gap-10">
         <div className="hidden sm:block cursor-pointer">Menu</div>
         <div className="relative group hidden sm:block">
           <div className="hidden sm:block cursor-pointer">Catalog</div>
           <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md p-4 w-48 z-50">
             <ul className="space-y-3">
-              <li>
+              <li className="group/sub">
                 <Link
                   href="/bedroom"
                   className="hover:text-gray-600 cursor-pointer flex justify-between items-center"
                 >
                   Bedroom
                 </Link>
+                <div className="absolute top-0 left-full hidden group-hover/sub:block bg-white shadow-lg rounded-md p-4 w-48 z-50">
+                  <ul className="space-y-2">
+                    <li>
+                      <Link
+                        href="/bedroom/bedding"
+                        className="hover:text-gray-600 cursor-pointer"
+                      >
+                        Bedddings
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/bedroom/wardrobes"
+                        className="hover:text-gray-600 cursor-pointer"
+                      >
+                        Quilts
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li className="hover:text-gray-600 cursor-pointer">Для ванной</li>
             </ul>
@@ -66,16 +86,18 @@ const Header = () => {
           {" "}
           <path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z" />{" "}
         </svg>{" "}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="24px"
-          viewBox="0 -960 960 960"
-          width="24px"
-          fill="#000000"
-        >
-          {" "}
-          <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />{" "}
-        </svg>{" "}
+        <Link href="/auth">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#000000"
+          >
+            {" "}
+            <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />{" "}
+          </svg>
+        </Link>{" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="24px"
@@ -88,7 +110,6 @@ const Header = () => {
         </svg>{" "}
         <div className="mt-2">
           {mobileCatalogOpen ? (
-            // Кнопка с X (закрыть)
             <button onClick={() => setMobileCatalogOpen(false)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

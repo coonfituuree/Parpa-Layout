@@ -1,18 +1,17 @@
 import Link from "next/link";
-import styles from "@/app/styles/ProductCard.module.css";
-import { ProductCardProps } from "./ProductCard.types";
+import { BeddingCardProps } from "../types/bedding";
+import styles from "../styles/BeddingCard.module.css";
 import Image from "next/image";
 
-  
-export default function ProductCard({
+const BeddingCard = ({
   slug,
   image,
   title,
   subtitle,
   price,
-}: ProductCardProps) {
+}: BeddingCardProps) => {
   return (
-    <Link href={`/bedroom/bedding/${slug}`} className={styles.card}>
+    <Link href={`/products/${slug}`} className={styles.global}>
       <Image
         className={styles.image}
         src={image}
@@ -24,7 +23,7 @@ export default function ProductCard({
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.subtitle}>{subtitle}</div>
         <div className={styles.bottom}>
-          <span className={styles.price}>from {price} $</span>
+          <span className={styles.price}>от {price} ₽</span>
           <button className={styles.arrowBtn} aria-label="Подробнее">
             &rarr;
           </button>
@@ -32,4 +31,6 @@ export default function ProductCard({
       </div>
     </Link>
   );
-}
+};
+
+export default BeddingCard;

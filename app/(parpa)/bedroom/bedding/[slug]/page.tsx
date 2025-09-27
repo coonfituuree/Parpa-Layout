@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import ProductGallery from "../../components/ProductGallery";
-import { Accordion } from "../../components/Accordion";
-import { products } from "../../data/products";
-import type { Product } from "../../types/product";
+import ProductGallery from "../../../../components/ProductGallery";
+import { Accordion } from "../../../../components/Accordion";
+import { products } from "../../../../data/products";
+import type { Product } from "../../../../types/product";
 import Breadcrumbs from "@/app/components/BreadCrumbs";
 
 export const revalidate = 3600;
@@ -14,9 +14,9 @@ export async function generateStaticParams() {
 export default async function ProductPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   const product = products.find((p: Product) => p.slug === slug);
   if (!product) notFound();
 
@@ -33,23 +33,23 @@ export default async function ProductPage({
             <div>
               <h1 className="text-3xl font-serif">{product.title}</h1>
               <p className="text-sm text-zinc-500 mt-1">
-                Коллекция постельного белья
+                Bedding collection
               </p>
             </div>
             <div>
               <div className="text-zinc-900">
-                от {product.priceFrom.toLocaleString("ru-RU")} ₽
+                from {product.priceFrom.toLocaleString("en-EN")} $
               </div>
               <div className="text-xs text-emerald-600 mt-1">
-                {product.inStock ? "В наличии" : "Нет в наличии"}
+                {product.inStock ? "In stock" : "Out of stock"}
               </div>
             </div>
             <div className="space-y-3">
               <button className="w-full h-11 rounded bg-[#c2a592] hover:bg-[#be9b84] text-white">
-                Собрать комплект
+                Assemble the kit
               </button>
               <button className="w-full h-11 rounded border border-zinc-200 hover:bg-zinc-50">
-                В избранное
+                Add to favorites
               </button>
               <ul className="text-sm text-zinc-600 space-y-1">
                 {product.badges.map((b, i) => (

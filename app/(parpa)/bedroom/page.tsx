@@ -12,28 +12,28 @@ export default function Bedroom() {
     <main className={styles.main}>
       <Breadcrumbs />
       <section>
-        <h1 className={styles.sectionTitle}>Для спальни</h1>
+        <h1 className={styles.sectionTitle}>For Bedroom</h1>
         <div className={styles.subSection}>
-          <h2>Постельное белье</h2>
+          <h2>Bedding</h2>
           <Link href="/bedroom/bedding" className={styles.link}>
-            Смотреть все
+            Show all
           </Link>
         </div>
         <div className={styles.grid}>
-          {BEDDING_PRODUCTS.map((prod, i) => (
+          {BEDDING_PRODUCTS.slice(0,4).map((prod, i) => (
             <ProductCard key={i} {...prod} />
           ))}
         </div>
       </section>
       <section>
         <div className={styles.subSection}>
-          <h2>Покрывала</h2>
-          <a className={styles.link} href="#">
-            Смотреть все
+          <h2>Bedspreads</h2>
+          <a className={styles.link} href="/bedroom/bedspreads">
+            Show all
           </a>
         </div>
         <div className={styles.grid}>
-          {QUILTS_PRODUCTS.map((prod, i) => (
+          {QUILTS_PRODUCTS.slice(0,4).map((prod, i) => (
             <ProductCard key={i} {...prod} />
           ))}
         </div>
