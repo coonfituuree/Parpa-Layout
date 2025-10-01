@@ -5,7 +5,27 @@ import Link from "next/link";
 
 const Header = () => {
   const [mobileCatalogOpen, setMobileCatalogOpen] = useState(false);
+  const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
 
+  const categories = [
+    {
+      label: "Bedroom",
+      href: "/bedroom",
+      sub: [
+        { label: "Bedding", href: "/bedroom/bedding" },
+        { label: "Wardrobes", href: "/bedroom/wardrobes" },
+        { label: "Quilts", href: "/bedroom/quilts" },
+      ],
+    },
+    {
+      label: "Bathroom",
+      href: "/bathroom",
+      sub: [
+        { label: "Towels", href: "/bathroom/towels" },
+        { label: "Bathrobes", href: "/bathroom/bathrobes" },
+      ],
+    },
+  ];
   return (
     <header className="flex items-center justify-between py-4 px-4 sm:px-8">
       <Link href="/">
@@ -139,26 +159,74 @@ const Header = () => {
         </div>
       </div>
       {mobileCatalogOpen && (
-        <div className="fixed mt-17 inset-0 bg-white h-96 z-50 p-6 overflow-y-auto">
+        <div className="fixed inset-0 bg-white z-50 p-6 overflow-y-auto">
           <ul className="space-y-4 text-lg">
-            <li>
-              <Link
-                href="/bedroom"
-                onClick={() => setMobileCatalogOpen(false)}
-                className="block"
-              >
-                Для спальни
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/bathroom"
-                onClick={() => setMobileCatalogOpen(false)}
-                className="block"
-              >
-                Для ванной
-              </Link>
-            </li>
+            {categories.map((cat) => (
+              <li key={cat.label}>
+                <button
+                  className="w-full text-left font-medium block py-2"
+                  onClick={() =>
+                    setOpenSubMenu(openSubMenu === cat.label ? null : cat.label)
+                  }
+                >
+                  {cat.label}
+                  {cat.sub && (
+                    <span className="float-right">
+                      {openSubMenu === cat.label ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#000000"
+                        >
+                          <path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z" />
+                        </svg>
+                      ) : (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="24px"
+                          viewBox="0 -960 960 960"
+                          width="24px"
+                          fill="#000000"
+                        >
+                          <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                        </svg>
+                      )}
+                    </span>
+                  )}
+                </button>
+                {/* Подкатегории */}
+                {cat.sub && openSubMenu === cat.label && (
+                  <ul className="pl-4 mt-2 space-y-2 text-base">
+                    {cat.sub.map((sub) => (
+                      <li key={sub.label}>
+                        <Link
+                          href={sub.href}
+                          onClick={() => {
+                            setMobileCatalogOpen(false);
+                            setOpenSubMenu(null);
+                          }}
+                          className="block py-1 hover:underline"
+                        >
+                          {sub.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {/* Ссылка на саму категорию */}
+                {!cat.sub && (
+                  <Link
+                    href={cat.href}
+                    onClick={() => setMobileCatalogOpen(false)}
+                    className="block py-2 hover:underline"
+                  >
+                    {cat.label}
+                  </Link>
+                )}
+              </li>
+            ))}
           </ul>
         </div>
       )}

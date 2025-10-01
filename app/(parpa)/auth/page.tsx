@@ -174,11 +174,11 @@ const Auth = () => {
                     preserveAspectRatio="xMidYMid"
                     fill="#000000"
                   >
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                     <g
                       id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     ></g>
                     <g id="SVGRepo_iconCarrier">
                       <path
@@ -209,11 +209,11 @@ const Auth = () => {
         <div className="text-center mt-6">
           <p className="text-xs text-zinc-500">
             By registering, you agree to{" "}
-            <button className="text-[#c2a592] hover:underline">
+            <button className="text-[#c2a592] cursor-pointer hover:underline">
               the terms of use
             </button>{" "}
             and{" "}
-            <button className="text-[#c2a592] hover:underline">
+            <button className="text-[#c2a592] cursor-pointer hover:underline">
               privacy policy
             </button>
           </p>

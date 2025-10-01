@@ -21,7 +21,7 @@ export default async function ProductPage({
   if (!product) notFound();
 
   return (
-    <main className="container mx-auto px-4 lg:px-10 py-6 lg:py-10">
+    <main className="container mx-auto px-4 lg:px-[16px] py-6 lg:py-[12px]">
       <Breadcrumbs />
       <div className="grid lg:grid-cols-12 gap-8">
         <div className="lg:col-span-6">

@@ -1,6 +1,7 @@
 export type Attr = { label: string; value: string };
 
 export type Product = {
+  id: number;
   slug: string;
   title: string;
   priceFrom: number;
