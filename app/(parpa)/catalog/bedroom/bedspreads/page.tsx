@@ -1,6 +1,6 @@
-import styles from "../../../styles/Home.module.css";
-import ProductCard from "../../../components/ProductCard/ProductCard";
-import { QUILTS_PRODUCTS } from "../../../components/ProductCard/products-list";
+import styles from "../../../../styles/Home.module.css";
+import ProductCard from "../../../../components/ProductCard/ProductCard";
+import { QUILTS_PRODUCTS } from "../../../../components/ProductCard/products-list";
 import Breadcrumbs from "@/app/components/BreadCrumbs";
 
 export default function Bedspreads() {
@@ -12,9 +12,7 @@ export default function Bedspreads() {
         <div className={styles.subSection}>
           <h2>Bedspreads</h2>
         </div>
-        <div className="mb-4 text-xl">
-          {QUILTS_PRODUCTS.length} products
-        </div>
+        <div className="mb-4 text-xl">{QUILTS_PRODUCTS.length} products</div>
         <div className={styles.grid}>
           {QUILTS_PRODUCTS.map((prod, i) => (
             <ProductCard key={i} {...prod} />

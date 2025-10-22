@@ -4,8 +4,8 @@ import React, { useState, useEffect } from "react";
 import Breadcrumbs from "@/app/components/BreadCrumbs";
 import { products } from "../.../../../data/products";
 import type { Product } from "../../.../../types/product";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -14,7 +14,6 @@ const Search = () => {
   const [showResults, setShowResults] = useState(false);
   const router = useRouter();
 
-  // Функция поиска с дебаунсом
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       if (searchQuery.trim()) {
@@ -46,7 +45,7 @@ const Search = () => {
     if (product) {
       console.log("More details for product:", product);
       router.push(
-        `/bedroom/bedding/${product.title.toLowerCase().replace(/\s+/g, "-")}`
+        `/catalog/bedroom/bedding/${product.title.toLowerCase().replace(/\s+/g, "-")}`
       );
     }
   };
@@ -148,8 +147,9 @@ const Search = () => {
                   >
                     <div className="aspect-square bg-zinc-100 relative">
                       {product.images && product.images.length > 0 ? (
-                        <img
+                        <Image
                           src={product.images[0]}
+                          fill
                           alt={product.title}
                           className="w-full h-full object-cover"
                         />

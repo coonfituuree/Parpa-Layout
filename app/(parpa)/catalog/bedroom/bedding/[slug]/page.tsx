@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import ProductGallery from "../../../../components/ProductGallery";
-import { Accordion } from "../../../../components/Accordion";
-import { products } from "../../../../data/products";
-import type { Product } from "../../../../types/product";
+import ProductGallery from "../../../../../components/ProductGallery";
+import { Accordion } from "../../../../../components/Accordion";
+import { products } from "../../../../../data/products";
+import type { Product } from "../../../../../types/product";
 import Breadcrumbs from "@/app/components/BreadCrumbs";
 
 export const revalidate = 3600;
@@ -32,9 +32,7 @@ export default async function ProductPage({
           <div className="lg:sticky lg:top-6 space-y-6">
             <div>
               <h1 className="text-3xl font-serif">{product.title}</h1>
-              <p className="text-sm text-zinc-500 mt-1">
-                Bedding collection
-              </p>
+              <p className="text-sm text-zinc-500 mt-1">Bedding collection</p>
             </div>
             <div>
               <div className="text-zinc-900">
@@ -61,8 +59,8 @@ export default async function ProductPage({
               </ul>
             </div>
             <div className="divide-y rounded">
-              <Accordion title="Описание">{product.description}</Accordion>
-              <Accordion title="Характеристики">
+              <Accordion title="Description">{product.description}</Accordion>
+              <Accordion title="Characteristics">
                 <dl className="grid grid-cols-2 gap-y-2 text-sm">
                   {product.attributes.map((a, i) => (
                     <div key={i} className="contents">
@@ -72,8 +70,8 @@ export default async function ProductPage({
                   ))}
                 </dl>
               </Accordion>
-              <Accordion title="Доставка">{product.delivery}</Accordion>
-              <Accordion title="Способы оплаты">{product.payment}</Accordion>
+              <Accordion title="Delivery">{product.delivery}</Accordion>
+              <Accordion title="Payment Method">{product.payment}</Accordion>
             </div>
           </div>
         </aside>

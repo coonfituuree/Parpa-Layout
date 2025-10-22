@@ -1,8 +1,7 @@
-import styles from "../../../styles/Home.module.css";
-import ProductCard from "../../../components/ProductCard/ProductCard";
-import { BEDDING_PRODUCTS } from "../../../components/ProductCard/products-list";
+import styles from "../../../../styles/Home.module.css";
+import ProductCard from "../../../../components/ProductCard/ProductCard";
+import { BEDDING_PRODUCTS } from "../../../../components/ProductCard/products-list";
 import Breadcrumbs from "@/app/components/BreadCrumbs";
-import Bedspreads from "../bedspreads/page";
 
 export default function Bedding() {
   return (

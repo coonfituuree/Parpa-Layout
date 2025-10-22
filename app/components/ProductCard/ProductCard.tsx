@@ -12,7 +12,7 @@ export default function ProductCard({
   price,
 }: ProductCardProps) {
   return (
-    <Link href={`/bedroom/bedding/${slug}`} className={styles.card}>
+    <Link href={`/catalog/bedroom/bedding/${slug}`} className={styles.card}>
       <Image
         className={styles.image}
         src={image}

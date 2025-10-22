@@ -13,7 +13,6 @@ const Header = () => {
       href: "/bedroom",
       sub: [
         { label: "Bedding", href: "/bedroom/bedding" },
-        { label: "Wardrobes", href: "/bedroom/wardrobes" },
         { label: "Quilts", href: "/bedroom/quilts" },
       ],
     },
@@ -41,37 +40,37 @@ const Header = () => {
         <div className="hidden sm:block cursor-pointer">Menu</div>
         <div className="relative group hidden sm:block">
           <div className="hidden sm:block cursor-pointer">Catalog</div>
-          <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md p-4 w-48 z-50">
+          <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md mt-[2px] py-3 w-48 z-50">
             <ul className="space-y-3">
               <li className="group/sub">
                 <Link
-                  href="/bedroom"
-                  className="hover:text-gray-600 cursor-pointer flex justify-between items-center"
+                  href="/catalog/bedroom"
+                  className="hover:text-gray-600 px-4 cursor-pointer flex justify-between items-center"
                 >
                   Bedroom
                 </Link>
-                <div className="absolute top-0 left-full hidden group-hover/sub:block bg-white shadow-lg rounded-md p-4 w-48 z-50">
-                  <ul className="space-y-2">
+                <div className="absolute top-0 left-full hidden group-hover/sub:block bg-white shadow-lg rounded-md py-3 w-48 z-50">
+                  <ul className="space-y-3">
                     <li>
                       <Link
-                        href="/bedroom/bedding"
-                        className="hover:text-gray-600 cursor-pointer"
+                        href="/catalog/bedroom/bedding"
+                        className="hover:text-gray-600 cursor-pointer px-4"
                       >
                         Bedddings
                       </Link>
                     </li>
                     <li>
                       <Link
-                        href="/bedroom/wardrobes"
-                        className="hover:text-gray-600 cursor-pointer"
+                        href="/catalog/bedroom/bedspreads"
+                        className="hover:text-gray-600 cursor-pointer px-4"
                       >
-                        Quilts
+                        Bedspreads
                       </Link>
                     </li>
                   </ul>
                 </div>
               </li>
-              <li className="hover:text-gray-600 cursor-pointer">Для ванной</li>
+              <li className="hover:text-gray-600 cursor-pointer px-4 ">Bathroom</li>
             </ul>
           </div>
         </div>
